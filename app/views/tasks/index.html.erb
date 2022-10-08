@@ -6,7 +6,9 @@
     <i class="far fa-square"></i>
    <% end %>
   <%= link_to task.title  , task_path(task) %><span style="width:20px; display:inline-block"></span>
-  <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete #{task.title}?"} do %>
+ <i class="fa-solid fa-trash"></i>
+  <% end %>
 
 
   <br>
